@@ -29,6 +29,7 @@ def run_game():
         # REDRAW THE SCREEN DURING EACH PASS THROUGH THE LOOP.
         screen.fill(ai_settings.bg_color)
 
+        # DRAW SHIP ONSCREEN
         ship.blitme()
 
         # MAKE THE MOST RECENTLY DRAWN SCREEN VISIBLE.
