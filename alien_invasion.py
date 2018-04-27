@@ -1,9 +1,8 @@
-import sys
-
 import pygame
 
 from settings import Settings
 from ship import Ship
+import game_functions as gf
 
 def run_game():
     # INITIALIZE PYGAME, SETTINGS, AND CREATE A SCREEN OBJECT.
@@ -22,17 +21,10 @@ def run_game():
     while True: # EVENT LOOP MANAGESS SCREEN UPDATES
 
         # WATCH FOR KEYBOARD AND MOUSE EVENTS.
-        for event in pygame.event.get(): # ACCESSES EVENT
-            if event.type == pygame.QUIT:   # EVENT TO CLOSE SYSTEM
-                sys.exit()
+        gf.check_events()
 
-        # REDRAW THE SCREEN DURING EACH PASS THROUGH THE LOOP.
-        screen.fill(ai_settings.bg_color)
+        # UDATES SCREEN WITH NEW IMAGES
+        gf.update_screen(ai_settings, screen, ship)
 
-        # DRAW SHIP ONSCREEN
-        ship.blitme()
-
-        # MAKE THE MOST RECENTLY DRAWN SCREEN VISIBLE.
-        pygame.display.flip()
 
 run_game()
