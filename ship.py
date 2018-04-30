@@ -5,7 +5,7 @@ class Ship():
     def __init__(self, ai_settings, screen):
         """Initialize the ship and set its starting position."""
         self.screen = screen
-        self.ai_settings = ai_settings
+        self.ai_settings = ai_settings  # GIVE SHIP ACCESS TO SPEED SETTINGS --> TO USE IN UPDATE()
 
         # LOAD THE SHIP IMAGE AND GET ITS RECT.
         self.image = pygame.image.load('images/ship.bmp')   # LOADS IMAGE
@@ -25,13 +25,13 @@ class Ship():
 
     def update(self):
         """Update the ship's position based on the movement flag."""
-        # UPDATE THE SHIP'S CENTER VALUE, NOT THE RECT.
-        if self.moving_right:
+        # UPDATE THE SHIP'S CENTER VALUE, NOT THE RECT POSITION
+        if self.moving_right and self.rect.right < self.screen_rect.right:  # IF RIGHT EDGE OF THE SHIP IS LESS THAN RIGHT EDGE OF THE SCREEN
             self.center += self.ai_settings.ship_speed_factor
-        if self.moving_left:
+        if self.moving_left and self.rect.left > 0: # IF LEFT EDGE OF THE SHIP IS GREATER THAN ZERO
             self.center -= self.ai_settings.ship_speed_factor
 
-        # UPDATE RECT OBJECT FROM SELF.CENTER
+        # UPDATE RECT OBJECT (POSTION OF THE SHIP) FROM SELF.CENTER
         self.rect.centerx = self.center
 
     def blitme(self):
