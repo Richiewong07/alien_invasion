@@ -14,7 +14,7 @@ def run_game():
     screen = pygame.display.set_mode((ai_settings.screen_width, ai_settings.screen_height)) # CREATE DISPLAY WINDOW
     pygame.display.set_caption("Alien Invasion")
 
-    ship = Ship(screen)
+    ship = Ship(ai_settings, screen)
 
     # START MAIN LOOP FOR THE GAME.
     while True: # EVENT LOOP MANAGESS SCREEN UPDATES
