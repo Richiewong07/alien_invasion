@@ -32,13 +32,9 @@ def run_game():
         # UPDATES THE SHIP'S POSITION.
         ship.update()
 
-        # UPDATES BULLET ON THE SCREEN.
-        bullets.update()
 
-        # GET RID OF BULLETS THAT HAVE DISAPPEARED.
-        for bullet in bullets.copy():   # MAKE COPY WITH NOT REMOVE LIST OR GROUP WITHIN FOR LOOP
-            if bullet.rect.bottom <= 0:
-                bullets.remove(bullet)
+        # UPDATES BULLET ON THE SCREEN.
+        gf.update_bullets(bullets)
 
         # UDATES SCREEN WITH NEW IMAGES
         gf.update_screen(ai_settings, screen, ship, bullets)
