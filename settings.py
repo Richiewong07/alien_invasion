@@ -11,3 +11,9 @@ class Settings():
 
         # SHIP SETTINGS --> HOW FAR TO MOVE SHIP ON EACH PASS THROUGH THE LOOP
         self.ship_speed_factor = 1.5
+
+        # BULLET SETTINGS
+        self.bullet_speed_factor = 1.0
+        self.bullet_width = 3
+        self.bullet_height = 15
+        self.bullet_color = 60, 60, 60
