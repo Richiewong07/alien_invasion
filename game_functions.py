@@ -62,7 +62,7 @@ def fire_bullets(ai_settings, screen, ship, bullets):
         bullets.add(new_bullet) # .add --> ADDS THE SPRITE TO THE GROUP
 
 
-def update_screen(ai_settings, screen, ship, bullets):
+def update_screen(ai_settings, screen, ship, alien, bullets):
     """Update images on screen and flip to the new screen."""
 
     # REDRAW THE SCREEN DURING EACH PASS THROUGH THE LOOP.
@@ -70,6 +70,9 @@ def update_screen(ai_settings, screen, ship, bullets):
 
     # DRAW SHIP ONSCREEN
     ship.blitme()
+
+    # DRAW ALIEN ONSCREEN
+    alien.blitme()
 
     # REDRAW ALL BULLETS BEHIND SHIP AND ALIENS.
     for bullet in bullets.sprites():    # bullets.sprites() --> RETURNS A LIST OF ALL SPRITES IN THE GROUP

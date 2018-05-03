@@ -2,6 +2,7 @@ import pygame
 
 from settings import Settings
 from ship import Ship
+from alien import Alien
 import game_functions as gf
 from pygame.sprite import Group
 
@@ -22,6 +23,8 @@ def run_game():
     # MAKE GROUP TO STORE BULLETS IN.
     bullets = Group()
 
+    # MAKE AN ALIEN.
+    alien = Alien(ai_settings, screen)
 
     # START MAIN LOOP FOR THE GAME.
     while True: # EVENT LOOP MANAGESS SCREEN UPDATES
@@ -37,7 +40,7 @@ def run_game():
         gf.update_bullets(bullets)
 
         # UDATES SCREEN WITH NEW IMAGES
-        gf.update_screen(ai_settings, screen, ship, bullets)
+        gf.update_screen(ai_settings, screen, ship, alien, bullets)
 
 
 

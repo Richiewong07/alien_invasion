@@ -4,7 +4,7 @@ from pygame.sprite import Sprite
 
 # SPIRITS --> ALLOWS YOU TO GROUP RELATED ELEMENTS AND ACT ON ALL THE GROUPED ELEMENTS ARE ONCE
 class Bullet(Sprite):
-    """A class to manage bullets fired from the ship"""
+    """A class to manage bullets fired from the ship."""
 
     def __init__(self, ai_settings, screen, ship):
         """Create a bullet object at the ship's current posistion."""
